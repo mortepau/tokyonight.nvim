@@ -199,9 +199,9 @@ function M.setup(config)
     -- TSBoolean           = { };    -- For booleans.
     -- TSCharacter         = { };    -- For characters.
     -- TSComment           = { };    -- For comment blocks.
-    TSNote = { fg = c.bg, bg = c.info },
-    TSWarning = { fg = c.bg, bg = c.warning },
-    TSDanger = { fg = c.bg, bg = c.error },
+    TSNote = { fg = config.invertCommentColors and c.bg or c.info, bg = config.invertCommentColors and c.info or c.none },
+    TSWarning = { fg = config.invertCommentColors and c.bg or c.warning, bg = config.invertCommentColors and c.warning or c.none },
+    TSDanger = { fg = config.invertCommentColors and c.bg or c.error, bg = config.invertCommentColors and c.error or c.none },
     TSConstructor = { fg = c.magenta }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
     -- TSConditional       = { };    -- For keywords related to conditionnals.
     -- TSConstant          = { };    -- For constants
