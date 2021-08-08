@@ -126,7 +126,7 @@ function M.setup(config)
     -- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore|
 
     Error = { fg = c.error }, -- (preferred) any erroneous construct
-    Todo = { bg = c.yellow, fg = c.bg }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+    Todo = { bg = config.invertCommentColors and c.yellow or c.none, fg = config.invertCommentColors and c.bg or c.yellow }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
     qfLineNr = { fg = c.dark5 },
     qfFileName = { fg = c.blue },
